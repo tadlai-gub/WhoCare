@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0ZjA3ZDcxOTc5ZjQzODI3MjJhOGRmMzQwNzUzY2UwZmVkOThjYTgiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMzY3NTUzNTYwOTY5Mjc4MjM5NiIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiI5YjYxYjFjYWIzMTctaW5kZXguaHRtbC0xOTYifSwiZXhwIjoxNzcxMjk3ODMyLCJpYXQiOjE3NzEyOTQyMzIsImFsZyI6IlJTMjU2In0.uncELcyy8TUwwRPt6cezk-DxTXSmiHAr_QpoaeudKtB1J6KTxgAX_ebaxDPf9X4uocnc2svaTYMWahpnF6bR5c6VNjOc7pU29Qw2c2zZCrXI3n7w4NFGyNoocmeap7RtH-6vZltVvH2br_FUYljYN0uLPkTblh0261nN2fyZvucDvHa_AmyoMJ6li-QZj4keT3Y-TpVhmGjIQ0cbTrPxZbO_JsOuLxmPwHINnPyDEfvn2Uzj8b7bCjCOb7ledX0CTCkqWYIeOI9D65WcfhGxfnh2yh1kPTar1rZCBQMnq33CT7jyrl0InUsueCruoa9UW_ABkUOrvOQ4g261A0pqZw","9b61b1cab317-index.html-196")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care You Think - v67.0 (Admin Data Fix)</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Fredoka+One&family=Zen+Maru+Gothic:wght@500;700;900&family=Permanent+Marker&display=swap');
+        
+        body { font-family: 'Noto Sans TC', sans-serif; user-select: none; }
+        .font-marker { font-family: 'Permanent Marker', cursive; }
+        .font-zen { font-family: 'Zen Maru Gothic', sans-serif; }
+        .bg-pink-theme { background-color: #FDEEF4; }
+        .bg-intro-header { background-color: #E1BEE7; }
+        .bg-scenario-header { background-color: #FDF090; }
+        .bg-report-header { background-color: #E1BEE7; }
+        .bg-header-yellow { background-color: #FDF090; }
+        .bg-sub-pink { background-color: #F8BBD0; }
+        .bg-sub-green { background-color: #C8E6C9; }
+        .btn-action-blue { background-color: #B3E5FC; color: black; border: 2px solid #81D4FA; }
+        .btn-action-pink { background-color: #F48FB1; color: black; border: 2px solid #F06292; }
+        .scenario-box { background-color: #A5E6A3; border: 2px solid #333; border-radius: 12px; box-shadow: 4px 4px 0px #333; }
+        .input-underline { background: transparent; border: none; border-bottom: 1px solid #9CA3AF; padding: 8px 0; width: 100%; outline: none; transition: border-color 0.3s; color: #4B5563; }
+        .input-underline:focus { border-bottom: 2px solid #9333EA; }
+        .btn-pill { background-color: #ffffff; border: 1px solid #D8B4FE; color: #7E22CE; border-radius: 9999px; padding: 10px 0; width: 160px; font-size: 14px; font-weight: 600; transition: all 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.05); text-align: center; cursor: pointer; }
+        .btn-pill:hover { background-color: #F3E8FF; color: #6B21A8; transform: translateY(-1px); border-color: #A855F7; }
+        .btn-primary { background-color: #9333EA; color: white; border-radius: 9999px; padding: 12px 32px; font-weight: bold; transition: all 0.2s; box-shadow: 0 4px 6px rgba(147, 51, 234, 0.3); cursor: pointer; }
+        .btn-primary:hover { background-color: #7E22CE; transform: translateY(-2px); }
+        .btn-action-large { width: 100%; padding: 1.5rem 1rem; font-size: 1.25rem; font-weight: 700; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.1s; display: flex; align-items: center; justify-content: center; font-family: 'Zen Maru Gothic', sans-serif; text-align: center; white-space: pre-wrap; }
+        .btn-action-large:active { transform: scale(0.98); }
+        .nav-btn-bottom { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #9CA3AF; font-size: 0.7rem; transition: all 0.2s; cursor: pointer; }
+        .nav-btn-bottom:hover { color: #9333EA; }
+        .nav-btn-bottom.active-mode { color: #9333EA; font-weight: bold; }
+        .nav-btn-bottom i { font-size: 1.6rem; margin-bottom: 2px; }
+        .report-table { width: 100%; border-collapse: collapse; border: 2px solid #333; font-size: 0.85rem; }
+        .report-table th { background-color: #4A90E2; color: white; padding: 8px; border: 1px solid #333; text-align: center; }
+        .report-table td { background-color: #FFF; color: #333; padding: 8px; border: 1px solid #333; text-align: center; font-weight: 500; }
+        .report-table tr:nth-child(even) td { background-color: #F9FAFB; }
+        .report-tab { padding: 10px 0; text-align: center; color: #666; font-weight: bold; cursor: pointer; border-bottom: 3px solid transparent; flex: 1; }
+        .report-tab.active { color: #000; border-bottom: 3px solid #FFF; }
+        .modal-overlay { background-color: rgba(76, 29, 149, 0.4); backdrop-filter: blur(4px); }
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #FDEEF4; }
+        .custom-scroll::-webkit-scrollbar-thumb { background-color: #D8B4FE; border-radius: 20px; }
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .pop-in { animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .float-item { transition: transform 0.3s ease; cursor: pointer; }
+        .float-item:hover { transform: scale(1.1) rotate(5deg); filter: drop-shadow(0 0 8px rgba(255,255,255,0.8)); }
+        .float-item:active { transform: scale(0.95); }
+        .head-hit-area { position: absolute; top: 30%; left: 15%; width: 25%; height: 20%; cursor: pointer; border-radius: 50%; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-pink-theme text-slate-700 font-zen overflow-x-hidden">
+
+    <nav id="main-nav" class="bg-intro-header shadow-sm border-b border-purple-200 sticky top-0 z-50 hidden h-14">
+        <div class="max-w-4xl mx-auto px-4 h-full flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-purple-600 text-white px-2 py-0.5 rounded font-bold text-xs">v67.0</div>
+                <span class="font-bold text-gray-800 tracking-wider">Care You Think</span>
+            </div>
+            <div id="nav-user-section" class="hidden flex items-center gap-3">
+                <div class="flex items-center gap-2 text-sm bg-white/50 px-3 py-1 rounded-full border border-purple-200">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span id="nav-username" class="font-bold text-purple-900 truncate max-w-[80px]">User</span>
+                </div>
+                <button type="button" onclick="window.app.logout()" class="text-xs text-purple-700 hover:text-white hover:bg-purple-500 font-bold border border-purple-300 px-3 py-1 rounded transition duration-200 bg-white">登出</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow w-full max-w-4xl mx-auto relative">
+
+        <!-- Intro -->
+        <section id="view-intro" class="view-section min-h-screen flex flex-col fade-in">
+            <div class="bg-intro-header w-full py-3 text-center shadow-sm border-b border-purple-200">
+                <h1 class="text-gray-800 font-bold tracking-widest text-lg">遊戲說明</h1>
+            </div>
+            <div class="flex-grow flex flex-col items-center text-center px-6 pt-8 pb-8 space-y-6 w-full">
+                <div class="mb-2"><h2 class="text-4xl text-gray-800 font-cute font-black mb-2">Welcome to</h2><h2 class="text-4xl text-gray-800 font-cute font-black">Care You Think ！</h2></div>
+                <div class="text-gray-700 font-medium text-lg leading-loose tracking-wide"><p>臨床的狀況眾多</p><p>要注意的事情也很多</p><p>面對生命不被容許犯錯</p><p>但遊戲中可以慢慢思考</p></div>
+                <div class="text-gray-700 font-medium text-lg leading-loose tracking-wide mt-2"><p>這是個情報蒐集遊戲</p><p>由你擔任主責護理師</p><p>去思考情境中</p><p>有哪些事情或數據是需要被注意的</p><p>發現一個線索獲得十分</p><p>希望能與你一起在遊戲中成長</p></div>
+                <div class="mt-4 mb-6"><img src="friends_robot.png" alt="Friends Robot" class="w-60 h-auto object-contain mx-auto hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/4712/4712109.png';"></div>
+                <button type="button" onclick="window.app.finishIntro()" class="bg-white border-2 border-purple-200 text-purple-700 font-bold text-xl py-3 px-16 rounded-full shadow-md hover:shadow-lg hover:bg-purple-50 transition transform hover:-translate-y-1 active:scale-95">準備好了！</button>
+            </div>
+        </section>
+
+        <!-- Login -->
+        <section id="view-login" class="view-section hidden min-h-screen flex flex-col items-center justify-center fade-in p-6 relative">
+            <div class="mb-8 relative"><div class="w-48 h-48 rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden mx-auto border-4 border-white/60"><img src="logo.png" alt="Logo" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/2913/2913520.png'; this.style.opacity='0.8';"></div></div>
+            <div class="w-full max-w-xs space-y-8">
+                <div class="space-y-6">
+                    <div class="relative"><input type="text" id="login-id" class="input-underline" placeholder=" " value="001"><label class="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-purple-600 peer-focus:text-sm">使用者卡號</label><div id="id-feedback" class="hidden absolute right-0 top-0 text-xs text-green-600 font-bold pop-in">✓ 紀錄已存檔</div></div>
+                    <div class="relative"><input type="text" id="login-name" class="input-underline" placeholder=" " value="Tad"><label class="absolute left-0 -top-3.5 text-gray-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-purple-600 peer-focus:text-sm">使用者姓名</label></div>
+                </div>
+                <div class="flex flex-col gap-3 items-center pt-2"><button type="button" onclick="window.app.login()" class="btn-pill">登入</button><button type="button" onclick="window.app.login()" class="btn-pill">顯示記錄</button><button type="button" onclick="window.app.openAdminAuth()" class="btn-pill" style="border-color: #C084FC; color: #9333EA;">管理後台</button></div>
+            </div>
+            <div class="mt-12 text-center space-y-2"><h3 class="text-2xl text-gray-700 font-zen font-bold tracking-widest">怎麼照護你來想</h3><h3 class="text-2xl text-gray-700 font-zen font-bold tracking-widest">我只在乎你怎麼想</h3><h1 class="text-4xl text-gray-800 font-marker font-black mt-4 transform -rotate-2">Care , You Think</h1></div>
+        </section>
+
+        <!-- Profile -->
+        <section id="view-profile" class="view-section hidden p-6 fade-in min-h-screen">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 mt-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-purple-100 flex flex-col justify-center items-center text-center">
+                    <div class="w-20 h-20 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-3xl font-bold mb-3 shadow-inner" id="dash-avatar">U</div>
+                    <h2 class="text-xl font-bold text-gray-800" id="dash-name">User</h2><p class="text-xs text-gray-500 font-mono mt-1" id="dash-id">ID: 000</p>
+                    <div class="mt-4"><span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full font-bold">歷史資料已讀取</span></div>
+                    <button type="button" onclick="window.app.logout()" class="mt-4 text-xs text-red-400 underline hover:text-red-600">登出此帳號</button>
+                </div>
+                <div class="md:col-span-2 grid grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-purple-100"><p class="text-gray-400 text-xs uppercase tracking-wider mb-1">歷史最高分</p><p class="text-4xl font-bold text-purple-600" id="dash-highscore">0</p></div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-purple-100"><p class="text-gray-400 text-xs uppercase tracking-wider mb-1">總遊玩次數</p><p class="text-4xl font-bold text-gray-700" id="dash-games">0</p></div>
+                    <div class="col-span-2 bg-white p-6 rounded-2xl shadow-sm border-2 border-purple-200 flex flex-col justify-center items-center p-4">
+                        <div class="w-full flex justify-between items-center mb-2"><div><h3 class="font-bold text-lg text-purple-900">準備好挑戰了嗎？</h3><p class="text-purple-400 text-sm">共有 <span id="total-scenarios-count" class="font-bold text-purple-600">0</span> 個情境。</p></div></div>
+                        <div id="btn-resume-container" class="w-full hidden mb-3"><button type="button" onclick="window.app.resumeGame()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold text-xl py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 transform transition hover:-translate-y-1"><span class="material-icons-round text-3xl">play_circle</span> 回到遊戲 (繼續遊玩)</button></div>
+                        <button type="button" onclick="window.app.showRandomScenario()" id="btn-new-game" class="btn-primary shadow-lg flex items-center justify-center gap-2 w-full py-3"><span class="material-icons-round">vaccines</span> <span id="txt-new-game">遊戲開始 (新的一局)</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-purple-100 overflow-hidden">
+                <div class="px-6 py-4 border-b border-purple-100 bg-purple-50 flex justify-between items-center"><h3 class="font-bold text-purple-800">歷史遊玩紀錄</h3><button type="button" onclick="window.db.clearHistory()" class="text-xs text-red-400 hover:text-red-600 underline">清除此 ID 紀錄</button></div>
+                <div class="max-h-64 overflow-y-auto custom-scroll"><table class="w-full text-sm text-left"><tbody id="history-table-body" class="divide-y divide-purple-50"></tbody></table></div>
+            </div>
+        </section>
+
+        <!-- Scenario -->
+        <section id="view-scenario" class="view-section hidden min-h-screen flex flex-col bg-purple-50/50 fade-in relative">
+            <div class="bg-scenario-header w-full py-4 text-center border-b-2 border-black relative sticky top-0 z-30">
+                <button type="button" onclick="window.app.onScenarioBack()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl hover:bg-black/10 rounded-full p-1 transition"><i class="ph ph-arrow-left"></i></button>
+                <h1 class="text-2xl text-black font-marker tracking-wide">Care You Think</h1>
+            </div>
+            <div class="flex-grow flex items-center justify-center p-6 pb-24">
+                <div class="scenario-box w-full max-w-md p-6 relative bg-[#A5E6A3] flex flex-col max-h-[75vh]">
+                    <h2 class="text-2xl font-black text-center text-black mb-4 tracking-widest shrink-0">情境說明</h2>
+                    <div class="flex-grow overflow-y-auto custom-scroll pr-2"><div id="scenario-content" class="space-y-4 text-slate-900 font-bold leading-relaxed whitespace-pre-wrap text-lg"></div></div>
+                    <div id="btn-scenario-container" class="mt-6 text-center shrink-0"><button type="button" onclick="window.app.startGame()" id="btn-scenario-start" class="bg-purple-100 hover:bg-purple-200 text-purple-900 border-2 border-purple-200 font-bold text-xl py-3 px-8 rounded-full shadow-md transition transform hover:-translate-y-1">確認後開始遊戲</button></div>
+                </div>
+            </div>
+            <div class="h-10"></div>
+        </section>
+
+        <!-- GAME -->
+        <section id="view-game" class="view-section hidden p-0 fade-in min-h-screen flex flex-col relative bg-cover bg-center" style="background-image: url('app_ward.png');">
+            <div class="absolute inset-0 bg-white/10 backdrop-blur-[1px] z-0"></div>
+            <div class="relative z-10 flex flex-col flex-grow h-full">
+                <div class="flex justify-between items-start p-4 z-20 pointer-events-none">
+                    <div>
+                        <h2 class="text-lg font-bold text-gray-800 bg-white/80 px-3 py-1 rounded-full shadow hidden"><span id="level-badge">L1</span> <span id="level-title">Title</span></h2>
+                        <span id="game-threshold" class="hidden">0</span>
+                    </div>
+                    <div id="timer-box" class="flex items-center gap-2 bg-blue-400 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg border-2 border-blue-300 pointer-events-auto"><i class="ph-bold ph-clock"></i><span class="mr-1">剩餘時間:</span><span id="timer-display">05:00</span></div>
+                </div>
+                <div class="flex-grow relative overflow-hidden">
+                    <div id="game-layer-observation" class="absolute inset-0 transition-opacity duration-300">
+                        <div class="absolute top-0 left-4 bg-white/80 px-3 py-1 rounded-full shadow border border-purple-100"><span class="text-xs text-gray-500 font-bold">目前分數:</span> <span id="score-preview" class="text-purple-600 font-bold text-lg">0</span></div>
+                        <div class="head-hit-area" onclick="window.game.checkConsciousness()"></div>
+                        <div class="absolute bottom-24 left-6 float-item" onclick="window.game.checkPad()"><img src="pad.png" class="w-24 h-auto drop-shadow-xl" alt="衛生棉"></div>
+                        <div class="absolute bottom-24 right-6 float-item" onclick="window.game.measureBP()"><img src="blood_pressure.png" class="w-32 h-auto drop-shadow-xl" alt="血壓計"></div>
+                        <button type="button" onclick="window.game.submit()" class="absolute bottom-32 left-1/2 -translate-x-1/2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full shadow-lg font-bold animate-bounce border-2 border-white">確認並下一步</button>
+                    </div>
+                    <div id="game-layer-treatment" class="absolute inset-0 bg-pink-theme z-30 hidden flex flex-col">
+                        <div class="bg-header-yellow w-full py-3 text-center border-b-2 border-black shrink-0 relative"><h1 class="text-2xl text-black font-marker tracking-wide">Care You Think</h1><button onclick="window.game.switchMode('observation')" class="absolute right-4 top-1/2 -translate-y-1/2 text-black"><i class="ph-bold ph-x text-xl"></i></button></div>
+                        <div class="bg-sub-pink w-full py-2 text-center border-b border-purple-200 shrink-0"><h2 class="text-xl font-bold text-gray-800">處置 : 給藥/注射/檢驗</h2></div>
+                        <div class="flex-grow flex flex-col items-center justify-center p-8 space-y-6 overflow-y-auto" id="treatment-actions-container"></div>
+                        <div class="h-24 shrink-0"></div>
+                    </div>
+                    <div id="game-layer-callout" class="absolute inset-0 bg-yellow-50 z-30 hidden flex flex-col">
+                        <div class="bg-header-yellow w-full py-3 text-center border-b-2 border-black shrink-0 relative"><h1 class="text-2xl text-black font-marker tracking-wide">Care You Think</h1><button onclick="window.game.switchMode('observation')" class="absolute right-4 top-1/2 -translate-y-1/2 text-black"><i class="ph-bold ph-x text-xl"></i></button></div>
+                        <div class="bg-sub-green w-full py-2 text-center border-b border-green-200 shrink-0"><h2 class="text-xl font-bold text-gray-800">求救 call out</h2></div>
+                        <div class="flex-grow flex flex-col items-center justify-center p-8 space-y-6 overflow-y-auto" id="callout-actions-container"></div>
+                        <div class="h-24 shrink-0"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vital Sign Success Modal -->
+        <div id="modal-vital-success" class="fixed inset-0 modal-overlay z-[60] hidden flex items-center justify-center p-4 fade-in">
+            <div class="bg-white rounded-3xl shadow-2xl max-w-xs w-full p-6 text-center pop-in border-4 border-gray-100">
+                <h3 class="text-2xl font-sans text-gray-800 mb-4 tracking-tight" style="font-family: Arial, sans-serif;">Check Vital Sign</h3>
+                <p class="text-gray-600 font-bold mb-8 text-sm leading-relaxed">測量血壓完畢，請至報告處查詢</p>
+                <div class="text-right"><button type="button" onclick="document.getElementById('modal-vital-success').classList.add('hidden')" class="text-purple-600 font-bold text-lg hover:bg-purple-50 px-4 py-2 rounded transition">確定</button></div>
+            </div>
+        </div>
+        
+        <!-- Game Over Modal -->
+        <div id="modal-gameover" class="fixed inset-0 modal-overlay z-[100] hidden flex items-center justify-center p-4 fade-in bg-black/80">
+            <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-8 text-center pop-in border-4 border-red-200 relative">
+                <div class="text-6xl mb-4">💀</div>
+                <h3 class="text-3xl font-black text-red-600 mb-2">病人死亡</h3>
+                <p id="gameover-reason" class="text-gray-600 font-bold mb-8 text-lg leading-relaxed">原因...</p>
+                <button type="button" onclick="window.app.backToDashboard()" class="w-full bg-red-100 text-red-700 font-bold text-xl py-3 rounded-xl hover:bg-red-200 transition">重新開始</button>
+            </div>
+        </div>
+
+        <!-- Reports -->
+        <section id="view-report-lookup" class="view-section hidden min-h-screen flex flex-col bg-pink-theme fade-in">
+            <div class="bg-report-header w-full py-6 text-center shadow-sm border-b border-purple-200">
+                <h1 class="text-3xl font-bold text-black tracking-widest">各項報告及生命徵象</h1>
+                <div class="flex justify-center gap-12 mt-6 px-4">
+                    <div onclick="window.reportSys.switchTab('blood')" class="report-tab active" id="tab-blood">血液</div>
+                    <div onclick="window.reportSys.switchTab('urine')" class="report-tab" id="tab-urine">尿液</div>
+                    <div onclick="window.reportSys.switchTab('vitals')" class="report-tab" id="tab-vitals">生命徵象</div>
+                </div>
+            </div>
+            <div class="flex-grow p-4 overflow-y-auto custom-scroll pb-24"><div id="report-content-area" class="w-full max-w-4xl mx-auto bg-white border-2 border-black rounded-lg overflow-hidden shadow-lg"></div></div>
+            <div class="h-20"></div>
+        </section>
+
+        <!-- Bottom Nav -->
+        <nav id="bottom-nav" class="fixed bottom-0 w-full bg-white border-t border-gray-200 py-2 px-6 flex justify-between z-[90] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] hidden max-w-4xl left-1/2 -translate-x-1/2">
+            <button type="button" onclick="window.app.viewScenarioInfo()" class="nav-btn-bottom group" id="btn-nav-scenario"><i class="ph-fill ph-info group-hover:text-purple-600"></i><span>情境說明</span></button>
+            <button type="button" onclick="window.app.nav('report-lookup')" class="nav-btn-bottom group"><i class="ph ph-magnifying-glass group-hover:text-purple-600"></i><span>報告查詢</span></button>
+            <button type="button" onclick="window.app.onHomeClick()" class="nav-btn-bottom group text-purple-600"><i class="ph-fill ph-house text-3xl"></i><span class="font-bold">首頁</span></button>
+            <button type="button" onclick="window.game.switchMode('treatment')" class="nav-btn-bottom group" id="nav-btn-treatment"><i class="ph-fill ph-first-aid-kit group-hover:text-purple-600"></i><span>處置</span></button>
+            <button type="button" onclick="window.game.switchMode('callout')" class="nav-btn-bottom group" id="nav-btn-callout"><i class="ph-fill ph-question group-hover:text-purple-600"></i><span>尋求協助</span></button>
+        </nav>
+
+        <!-- Summary -->
+        <section id="view-summary" class="view-section hidden max-w-2xl mx-auto mt-12 slide-up p-4">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-purple-100">
+                <div class="bg-intro-header p-8 text-center"><h1 class="text-3xl font-bold text-gray-800 mb-1">🎉 遊戲結算</h1><p class="text-gray-600 text-sm">數據已自動保存</p></div>
+                <div class="p-8 text-center">
+                    <div class="flex justify-center items-center gap-12 mb-8 border-b border-purple-100 pb-8"><div><p class="text-gray-400 text-xs uppercase">總分</p><p class="text-5xl font-bold text-purple-600" id="summary-score">0</p></div><div class="h-16 w-px bg-purple-100"></div><div><p class="text-slate-400 text-xs uppercase">評級</p><p class="text-5xl font-bold text-yellow-500" id="summary-rank">S</p></div></div>
+                    <div class="space-y-4"><button type="button" onclick="window.report.renderCurrentSession()" class="btn-primary w-full py-3 rounded-xl shadow-md">查看本次詳細報告</button><button type="button" onclick="window.app.backToDashboard()" class="w-full bg-white border-2 border-purple-200 text-purple-600 font-bold py-3 rounded-xl hover:bg-purple-50 transition flex items-center justify-center gap-2"><i class="ph-bold ph-arrow-counter-clockwise text-xl"></i> 🔄 再玩一次 (回到儀表板)</button></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-report" class="view-section hidden max-w-5xl mx-auto p-6 fade-in">
+            <div class="flex justify-between items-center mb-6 mt-6"><div class="flex gap-2"><button type="button" onclick="window.app.nav('summary')" class="text-gray-500 font-bold text-sm bg-white border border-gray-200 px-4 py-2 rounded hover:bg-gray-50 flex items-center gap-1"><i class="ph ph-arrow-left"></i> 返回結算</button><button type="button" onclick="window.app.backToDashboard()" class="text-purple-600 font-bold text-sm bg-white border border-purple-200 px-4 py-2 rounded hover:bg-purple-50 flex items-center gap-1"><i class="ph-fill ph-house"></i> 儀表板</button></div><button type="button" onclick="window.report.exportPDF()" id="btn-pdf" class="bg-red-500 text-white px-4 py-2 rounded-lg font-bold shadow-md flex items-center gap-2 hover:bg-red-600"><span class="material-icons-round text-sm">download</span> 下載 PDF</button></div><div id="pdf-content" class="bg-white p-10 rounded-xl shadow-lg border border-purple-100"><div class="flex justify-between items-end border-b-2 border-purple-100 pb-6 mb-8"><div><h1 class="text-3xl font-bold text-gray-800">遊戲成績報告</h1><p class="text-gray-500 text-sm mt-1">v67.0</p></div><div class="text-right"><p class="font-bold text-gray-800 text-lg" id="rep-player">User</p><p class="text-gray-400 text-xs font-mono" id="rep-date">Date</p></div></div><div class="mb-8"><h3 class="font-bold text-purple-700 mb-4 border-l-4 border-purple-500 pl-3">本局得分趨勢</h3><div class="h-64 bg-purple-50 rounded border border-purple-100 p-2 relative"><canvas id="scoreChart"></canvas></div></div><div class="mb-6"><h3 class="font-bold text-purple-700 mb-4 border-l-4 border-green-500 pl-3">關卡明細</h3><table class="w-full text-sm text-left border-collapse"><thead class="bg-purple-100"><tr><th class="p-3 border-b border-purple-200 text-purple-900">Level</th><th class="p-3 border-b border-purple-200 text-center text-purple-900">Status</th><th class="p-3 border-b border-purple-200 text-right text-purple-900">Time</th><th class="p-3 border-b border-purple-200 text-right text-purple-900">Score</th></tr></thead><tbody id="rep-table-body"></tbody><tfoot class="bg-purple-50 font-bold"><tr><td colspan="3" class="p-3 text-right">Total</td><td class="p-3 text-right text-purple-600 text-lg" id="rep-total">0</td></tr></tfoot></table></div></div>
+        </section>
+
+        <!-- Admin -->
+        <section id="view-admin-dash" class="view-section hidden max-w-5xl mx-auto p-6 bg-white shadow-xl min-h-screen">
+            <div class="flex justify-between items-center mb-6"><div><h2 class="text-2xl font-bold text-gray-800">後台管理</h2></div><div class="flex gap-2"><button type="button" onclick="window.db.resetAll()" class="text-xs bg-red-100 text-red-600 px-3 py-2 rounded font-bold border border-red-200 hover:bg-red-200">⚠️ 初始化預設資料</button><button type="button" onclick="window.app.logout()" class="text-sm px-3 text-gray-500">登出</button></div></div>
+            <h3 class="text-lg font-bold text-purple-800 mb-4 border-b pb-2">情境列表 (Scenarios)</h3>
+            <div class="grid gap-4" id="admin-scenario-list"></div>
+            <button type="button" onclick="window.admin.openScenarioEditor()" class="mt-4 w-full py-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-500 hover:border-purple-500 hover:text-purple-600 font-bold">+ 新增情境</button>
+            <div class="mt-12 text-center text-gray-400 text-xs">Care You Think v67.0 System</div>
+        </section>
+        
+        <section id="view-admin-scenario-editor" class="view-section hidden max-w-5xl mx-auto p-6 bg-white shadow-xl min-h-screen">
+            <div class="flex justify-between items-center mb-6"><div><h2 class="text-2xl font-bold text-gray-800">編輯情境</h2></div><button type="button" onclick="window.admin.backToAdminDash()" class="text-gray-500">Back</button></div>
+            <div class="mb-8"><label class="block text-sm font-bold text-gray-700 mb-2">情境描述文字</label><textarea id="edit-scenario-text" class="w-full h-32 p-3 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"></textarea></div>
+            <div class="mb-8 border-t pt-4"><div class="flex justify-between items-center mb-2"><h3 class="text-lg font-bold text-blue-800">報告數據設定 (Reports)</h3><button onclick="window.admin.openReportEditor()" class="text-xs bg-blue-100 text-blue-700 px-3 py-1 rounded font-bold">📝 編輯報告數據</button></div><p class="text-xs text-gray-500">設定此情境下的血液、尿液、生命徵象數據。</p></div>
+            <div class="flex justify-between items-center mb-4"><h3 class="text-lg font-bold text-purple-800">此情境的關卡 (Levels)</h3><button type="button" onclick="window.admin.openLevelEditor()" class="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded font-bold">+ 新增關卡</button></div>
+            <div class="space-y-4" id="admin-level-list"></div>
+            <button type="button" onclick="window.admin.saveScenario()" class="btn-primary w-full mt-8">儲存情境設定</button>
+        </section>
+
+        <!-- Admin Modals -->
+        <div id="modal-level-editor" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4 fade-in">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-6 pop-in border-2 border-purple-200 max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4"><h3 class="font-bold text-xl text-purple-900" id="level-editor-title">編輯關卡</h3><button type="button" onclick="window.admin.closeLevelEditor()" class="text-gray-400 text-xl">x</button></div>
+                <div class="space-y-6">
+                    <div><label class="block text-sm font-bold text-gray-700 mb-1">基本設定</label><div class="grid grid-cols-2 gap-4"><input id="edit-lvl-name" class="border p-2 rounded" placeholder="關卡名稱"><input id="edit-lvl-threshold" class="border p-2 rounded" placeholder="過關門檻 (分)"></div></div>
+                    <div><label class="block text-sm font-bold text-gray-700 mb-1">觀察項目 (Observations)</label><div class="border rounded p-2"><table class="w-full text-sm"><tbody id="editor-conditions-list"></tbody></table></div><button type="button" onclick="window.admin.addConditionRow()" class="text-xs bg-gray-100 p-2 rounded w-full mt-1 hover:bg-gray-200">+ 增加觀察項目</button></div>
+                    <div><label class="block text-sm font-bold text-gray-700 mb-1">動作設定 (Actions)</label><div class="border rounded p-2"><table class="w-full text-sm text-left"><thead><tr class="bg-gray-100"><th class="p-1 w-1/2">按鈕文字</th><th class="p-1 w-1/4">類型</th><th class="p-1 w-1/6">分數</th><th class="p-1">致死?</th><th class="p-1"></th></tr></thead><tbody id="editor-actions-list"></tbody></table></div><button type="button" onclick="window.admin.addActionRow()" class="text-xs bg-gray-100 p-2 rounded w-full mt-1 hover:bg-gray-200">+ 增加動作按鈕</button></div>
+                    <button type="button" onclick="window.admin.saveLevelToScenario()" class="btn-primary w-full py-2 rounded mt-2">確認加入/更新關卡</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-report-editor" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4 fade-in"><div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full p-6 pop-in border-2 border-blue-200 h-[80vh] flex flex-col"><div class="flex justify-between items-center mb-4"><h3 class="font-bold text-xl text-blue-900">編輯報告資料 (JSON)</h3><button onclick="window.admin.closeReportEditor()" class="text-gray-400 text-xl">x</button></div><p class="text-xs text-red-500 mb-2">警告：請保持 JSON 格式正確，否則報告功能將無法運作。</p><textarea id="report-json-editor" class="flex-grow p-4 border border-gray-300 rounded font-mono text-xs overflow-auto bg-gray-50 focus:ring-2 focus:ring-blue-500 outline-none"></textarea><div class="mt-4 flex gap-4"><button onclick="window.admin.saveReportJson()" class="flex-1 btn-primary py-2 rounded bg-blue-600 hover:bg-blue-700">儲存變更</button><button onclick="window.admin.closeReportEditor()" class="flex-1 bg-gray-200 text-gray-700 font-bold py-2 rounded hover:bg-gray-300">取消</button></div></div></div>
+        <div id="modal-alert" class="fixed inset-0 modal-overlay z-[110] hidden flex items-center justify-center p-4 fade-in"><div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 text-center pop-in border-2 border-purple-100"><div class="w-12 h-12 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">⚠️</div><p id="alert-msg" class="text-gray-700 font-bold mb-6">Message</p><button type="button" onclick="window.app.closeAlert()" class="btn-primary w-full py-2 rounded-xl">OK</button></div></div>
+        <div id="modal-confirm" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4 fade-in"><div class="bg-white rounded-2xl shadow-2xl max-w-xs w-full p-6 pop-in border-2 border-red-100 text-center"><div class="w-12 h-12 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🗑️</div><h3 class="font-bold text-lg text-gray-800 mb-2">確定要刪除嗎？</h3><p class="text-sm text-gray-500 mb-6">此動作無法復原。</p><div class="flex gap-3"><button type="button" onclick="window.admin.executeDelete()" class="flex-1 bg-red-500 text-white font-bold py-2 rounded-lg hover:bg-red-600">確定刪除</button><button type="button" onclick="window.admin.closeConfirmModal()" class="flex-1 bg-gray-200 text-gray-700 font-bold py-2 rounded-lg hover:bg-gray-300">取消</button></div></div></div>
+        <div id="modal-admin-auth" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4 fade-in"><div class="bg-white rounded-2xl shadow-xl w-72 p-6 pop-in text-center border-2 border-purple-200"><h3 class="font-bold text-purple-900 mb-4">管理員驗證</h3><input type="password" id="admin-pass-input" class="w-full border p-2 rounded mb-4 text-center focus:ring-2 focus:ring-purple-500 outline-none" placeholder="請輸入密碼" value="123456"><div class="flex gap-2"><button type="button" onclick="window.app.verifyAdmin()" class="flex-1 btn-primary py-1 rounded">登入</button><button type="button" onclick="window.app.closeAdminAuth()" class="flex-1 bg-gray-100 text-gray-600 font-bold rounded py-1 hover:bg-gray-200">取消</button></div></div></div>
+
+    </main>
+
+    <script>
+        // --- DATABASE LOGIC ---
+        window.db = {
+            userKey: 'care_you_think_v67_users',
+            dataKey: 'care_you_think_v67_data',
+            getUsers: () => { try { return JSON.parse(localStorage.getItem(window.db.userKey) || '{}'); } catch(e){ return {}; } },
+            saveUser: (id, data) => { 
+                try {
+                    const u = window.db.getUsers(); u[id] = data; localStorage.setItem(window.db.userKey, JSON.stringify(u)); 
+                } catch(e) { alert("儲存失敗："+e); }
+            },
+            getScenarios: () => {
+                let data = [];
+                try { const stored = localStorage.getItem(window.db.dataKey); if (stored) data = JSON.parse(stored); } catch(e) { }
+                return data; // Return raw data, default gen moved to explicit reset
+            },
+            generateDefaults: () => {
+                const rpt = { blood: [], urine: [], vitals: [["4/20", "03:45", "36.0", "108", "20", "132/83", "100"]] };
+                const sharedActions = [
+                    { id: 'act_meds', label: '給予藥物', type: 'treatment', score: 10 },
+                    { id: 'act_inj', label: '注射/檢驗', type: 'treatment', score: 10 },
+                    { id: 'act_fluids', label: '大量輸液', type: 'treatment', score: 10 },
+                    { id: 'act_dr', label: '通知醫師', type: 'callout', score: 10 },
+                    { id: 'act_senior', label: '找學姊!!\n學姊!!!!', type: 'callout', score: 10 }
+                ];
+
+                const data = [
+                    { 
+                        id: 's1', 
+                        text: "W76-213床,王小姐,35歲\n\n妊娠高血壓+產前出血+剖腹產後出血\n\n在4/19，懷孕33+2/7週時，出血入院觀察，入院血壓158/103mmHg，因疑似胎盤早期剝離，於4/20凌晨行剖腹產，術中出血量1800ml,手術後在恢復室觀察產後1小時惡露量10克，醫師評估後送回病房\n\n現在是4/20 早上09:30,你是主責護理師，家屬按緊急鈴告訴你：「我太太突然出血很多！滿滿一整片！」", 
+                        levels: [
+                            { id:'l1', name:'初步評估', threshold:100, conditions:[{id:'c_cons',label:'確認意識',points:100,req:true},{id:'c_vital',label:'生命徵象',points:100,req:true},{id:'c_bleed',label:'檢視惡露',points:100,req:true}], actions: JSON.parse(JSON.stringify(sharedActions)) },
+                            { id:'l2', name:'通報處置', threshold:100, conditions:[], actions: JSON.parse(JSON.stringify(sharedActions)) },
+                            { id:'l3', name:'醫囑執行', threshold:100, conditions:[], actions: JSON.parse(JSON.stringify(sharedActions)) }
+                        ], 
+                        reports: rpt 
+                    },
+                    { 
+                        id: 's2', 
+                        text: "情境 2：妊娠糖尿病合併胎盤早期剝離\n\n陳小姐，38歲，經產婦，有妊娠糖尿病病史。\n入院時血壓正常，無高血壓病史。\n\n陷阱題：此病人生命徵象穩定，若給予降壓藥或硫酸鎂，將導致休克死亡。",
+                        levels: [
+                            { id:'l1', name:'初步評估', threshold:100, conditions:[{id:'c_cons',label:'確認意識',points:100,req:true}], actions:[] },
+                            { id:'l2', name:'處置', threshold:100, conditions:[], actions: [
+                                { id: 'act_meds', label: '給予藥物\n(降壓/硫酸鎂)', type: 'treatment', score: 0, isFatal: true, deathMsg: '病人無高血壓，給予降壓藥導致休克死亡！' },
+                                { id: 'act_dr', label: '通知醫師', type: 'callout', score: 100 }
+                            ]}
+                        ],
+                        reports: rpt
+                    }
+                ];
+                window.db.saveData(data);
+                return data;
+            },
+            saveData: (d) => localStorage.setItem(window.db.dataKey, JSON.stringify(d)),
+            resetAll: () => { localStorage.clear(); window.db.generateDefaults(); location.reload(); },
+            clearHistory: () => { if(confirm("Clear?")) { const u=window.db.getUsers(); if(u[window.appState.userId]){u[window.appState.userId].history=[]; window.db.saveUser(window.appState.userId, u[window.appState.userId]); window.app.loadProfile(window.appState.userId);} } }
+        };
+
+        // --- APP LOGIC ---
+        window.appState = { userId: null, userName: null, levelIdx: 0, currentSessionLogs: [], currentSessionScore: 0, selectedObs: [], timer: 300, interval: null, active: false, scenarios: [], currentScenario: null, gameMode: 'observation' };
+
+        window.app = {
+            init: () => {
+                document.querySelectorAll('.view-section').forEach(e => e.classList.add('hidden'));
+                document.getElementById('view-intro').classList.remove('hidden');
+                document.getElementById('bottom-nav').classList.add('hidden');
+                // Removed stub admin to prevent masking errors
+            },
+            finishIntro: () => { window.app.nav('login'); document.getElementById('main-nav').classList.remove('hidden'); },
+            login: () => {
+                const id = document.getElementById('login-id').value.trim(), name = document.getElementById('login-name').value.trim();
+                if(!id) return window.app.showAlert("請輸入使用者卡號"); if(!name) return window.app.showAlert("請輸入使用者姓名");
+                const users = window.db.getUsers(); let user = users[id];
+                if(!user) { user = {id, name, history:[]}; window.db.saveUser(id,user); } else if(user.name !== name) { user.name = name; window.db.saveUser(id,user); }
+                window.appState.userId = id; window.appState.userName = name;
+                document.getElementById('nav-username').textContent = name; document.getElementById('nav-user-section').classList.remove('hidden');
+                // Ensure data exists for user
+                let data = window.db.getScenarios();
+                if(data.length === 0) data = window.db.generateDefaults();
+                window.appState.scenarios = data; 
+                document.getElementById('total-scenarios-count').textContent = window.appState.scenarios.length;
+                window.app.loadProfile(id);
+            },
+            logout: () => { window.appState.userId=null; clearInterval(window.appState.interval); document.getElementById('nav-user-section').classList.add('hidden'); document.getElementById('login-id').value='001'; document.getElementById('login-name').value='Tad'; document.getElementById('id-feedback').classList.add('hidden'); document.getElementById('bottom-nav').classList.add('hidden'); window.app.nav('login'); },
+            loadProfile: (uid) => {
+                const u = window.db.getUsers()[uid];
+                if (!u) return window.app.nav('login');
+                document.getElementById('dash-name').textContent = u.name; 
+                document.getElementById('dash-id').textContent = `ID: ${u.id}`; 
+                document.getElementById('dash-avatar').textContent = u.name[0].toUpperCase();
+                document.getElementById('dash-games').textContent = u.history.length; 
+                const maxScore = u.history.length > 0 ? Math.max(...u.history.map(h=>h.totalScore)) : 0;
+                document.getElementById('dash-highscore').textContent = maxScore;
+                const tbody = document.getElementById('history-table-body'); tbody.innerHTML = '';
+                [...u.history].reverse().forEach(h => { tbody.innerHTML += `<tr class="border-b border-purple-50 hover:bg-purple-50"><td class="px-6 py-3 text-xs text-gray-500">${h.date}</td><td class="px-6 py-3 text-center"><span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-bold">${h.rank}</span></td><td class="px-6 py-3 text-right font-bold text-gray-700">${h.totalScore}</td></tr>`; });
+                window.app.nav('profile');
+            },
+            showRandomScenario: () => {
+                if(window.appState.active) { if(!confirm("確定要開始新的一局嗎？")) return; window.appState.active = false; }
+                window.appState.scenarios = window.db.getScenarios();
+                if(window.appState.scenarios.length === 0) return alert("無情境，請聯繫管理員初始化資料");
+                window.appState.currentScenario = window.appState.scenarios[Math.floor(Math.random() * window.appState.scenarios.length)];
+                document.getElementById('scenario-content').textContent = window.appState.currentScenario.text; 
+                document.getElementById('btn-scenario-container').classList.remove('hidden');
+                window.app.nav('scenario');
+            },
+            viewScenarioInfo: () => { if (!window.appState.currentScenario) return; document.getElementById('btn-scenario-container').classList.add('hidden'); document.getElementById('scenario-content').textContent = window.appState.currentScenario.text; window.app.nav('scenario'); },
+            onHomeClick: () => { if(window.appState.active) { window.app.nav('game'); window.game.switchMode('observation'); } else { window.app.backToDashboard(); } },
+            resumeGame: () => { window.app.nav('game'); },
+            onScenarioBack: () => { if(window.appState.active) window.app.nav('game'); else window.app.nav('profile'); },
+            startGame: () => { window.appState.levelIdx=0; window.appState.currentSessionLogs=[]; window.appState.selectedObs=[]; window.appState.currentSessionScore = 0; window.app.nav('game'); setTimeout(() => window.game.startLevel(0), 100); },
+            nav: (id) => { 
+                document.querySelectorAll('.view-section').forEach(e => e.classList.add('hidden')); 
+                document.querySelectorAll('.modal-overlay').forEach(e => e.classList.add('hidden')); 
+                document.getElementById('view-'+id).classList.remove('hidden'); 
+                if(id === 'game' || id === 'report-lookup' || (id === 'scenario' && window.appState.active)) document.getElementById('bottom-nav').classList.remove('hidden'); else document.getElementById('bottom-nav').classList.add('hidden');
+                if(id==='report-lookup') window.reportSys.init();
+            },
+            backToDashboard: () => { window.app.loadProfile(window.appState.userId); },
+            closeAlert: () => document.getElementById('modal-alert').classList.add('hidden'),
+            showAlert: (m) => { document.getElementById('alert-msg').textContent=m; document.getElementById('modal-alert').classList.remove('hidden'); },
+            openAdminAuth: () => { document.getElementById('modal-admin-auth').classList.remove('hidden'); const i=document.getElementById('admin-pass-input'); setTimeout(()=>i.focus(), 100); },
+            closeAdminAuth: () => document.getElementById('modal-admin-auth').classList.add('hidden'),
+            verifyAdmin: () => { if(document.getElementById('admin-pass-input').value === '123456') { window.app.closeAdminAuth(); window.app.nav('admin-dash'); } else window.app.showAlert("密碼錯誤"); }
+        };
+
+        window.game = {
+            startLevel: (idx) => {
+                const levels = window.appState.currentScenario.levels;
+                if(idx >= levels.length) return window.game.finish(); 
+                window.appState.levelIdx=idx; 
+                window.appState.selectedObs=[]; 
+                window.appState.active=true;
+                window.game.switchMode('observation'); 
+
+                const l=levels[idx]; 
+                document.getElementById('level-badge').textContent=`L${idx+1}`; 
+                document.getElementById('level-title').textContent=l.name; 
+                
+                const tContainer = document.getElementById('treatment-actions-container');
+                const cContainer = document.getElementById('callout-actions-container');
+                tContainer.innerHTML = ''; cContainer.innerHTML = '';
+
+                const actions = l.actions || [];
+                actions.forEach(a => {
+                    const btn = document.createElement('button');
+                    btn.className = a.type === 'treatment' ? 'btn-action-large btn-action-blue' : 'btn-action-large btn-action-pink';
+                    btn.textContent = a.label;
+                    btn.onclick = () => window.game.performAction(a);
+                    if(a.type === 'treatment') tContainer.appendChild(btn); else cContainer.appendChild(btn);
+                });
+
+                window.game.updateScoreDisplay();
+                clearInterval(window.appState.interval); 
+                window.appState.timer = 300;
+                window.game.updateTimer();
+                window.appState.interval=setInterval(()=>{window.appState.timer--; window.game.updateTimer(); if(window.appState.timer<=0) window.game.triggerDeath("時間過長，病人休克死亡");},1000);
+            },
+            switchMode: (mode) => {
+                if (!window.appState.active) return;
+                if (document.getElementById('view-game').classList.contains('hidden')) window.app.nav('game'); 
+                window.appState.gameMode = mode;
+                document.getElementById('game-layer-observation').classList.add('hidden');
+                document.getElementById('game-layer-treatment').classList.add('hidden');
+                document.getElementById('game-layer-callout').classList.add('hidden');
+                document.getElementById('nav-btn-treatment').classList.remove('active-mode');
+                document.getElementById('nav-btn-callout').classList.remove('active-mode');
+
+                if (mode === 'observation') document.getElementById('game-layer-observation').classList.remove('hidden');
+                else if (mode === 'treatment') { document.getElementById('game-layer-treatment').classList.remove('hidden'); document.getElementById('nav-btn-treatment').classList.add('active-mode'); }
+                else if (mode === 'callout') { document.getElementById('game-layer-callout').classList.remove('hidden'); document.getElementById('nav-btn-callout').classList.add('active-mode'); }
+            },
+            performAction: (action) => {
+                if(action.isFatal) { return window.game.triggerDeath(action.deathMsg || "執行了錯誤處置，導致病人死亡。"); }
+                if(!window.appState.selectedObs.includes(action.id)) {
+                    window.appState.selectedObs.push(action.id);
+                    window.appState.currentSessionScore += (action.score || 0);
+                    window.game.updateScoreDisplay();
+                    window.app.showAlert(`已執行：${action.label}`);
+                } else { window.app.showAlert("此動作已執行過"); }
+            },
+            checkPad: () => { window.game.performAction({id:'c_bleed', label:'檢視惡露', score:50}); },
+            measureBP: () => { 
+                const sys = Math.floor(Math.random() * 20) + 140; 
+                window.game.performAction({id:'c_vital', label:`測量血壓 (${sys}/90)`, score:50});
+                document.getElementById('modal-vital-success').classList.remove('hidden');
+                // Write data
+                if(window.appState.currentScenario) {
+                    if(!window.appState.currentScenario.reports) window.appState.currentScenario.reports = {blood:[], urine:[], vitals:[]};
+                    if(!window.appState.currentScenario.reports.vitals) window.appState.currentScenario.reports.vitals = [];
+                    const now = new Date();
+                    window.appState.currentScenario.reports.vitals.push([`${now.getMonth()+1}/${now.getDate()}`, `${now.getHours()}:${now.getMinutes()}`, "36.5", "80", "18", `${sys}/90`, "98"]);
+                }
+            },
+            checkConsciousness: () => { window.game.performAction({id:'c_cons', label:'病人意識清醒，喊痛', score:50}); },
+            updateTimer: () => document.getElementById('timer-display').textContent=`${Math.floor(window.appState.timer/60).toString().padStart(2,'0')}:${(window.appState.timer%60).toString().padStart(2,'0')}`,
+            updateScoreDisplay: () => document.getElementById('score-preview').textContent = window.appState.currentSessionScore,
+            toggle: (el,id) => {}, 
+            submit: () => {
+                const currentLvl = window.appState.currentScenario.levels[window.appState.levelIdx];
+                // Death Logic
+                if(window.appState.levelIdx === 0) {
+                    if(!window.appState.selectedObs.includes('c_cons') || !window.appState.selectedObs.includes('c_vital') || !window.appState.selectedObs.includes('c_bleed')) {
+                        return window.game.triggerDeath("未察看病人意識/生命徵象/出血量，導致評估延誤。");
+                    }
+                }
+                const logs = { level: currentLvl.name, score: window.appState.currentSessionScore, time: new Date().toLocaleTimeString() };
+                window.appState.currentSessionLogs.push(logs);
+                window.game.startLevel(window.appState.levelIdx + 1);
+            },
+            triggerDeath: (reason) => {
+                window.appState.active = false;
+                clearInterval(window.appState.interval);
+                const u = window.db.getUsers();
+                if (u[window.appState.userId]) {
+                    u[window.appState.userId].history.push({ date: new Date().toLocaleString(), totalScore: window.appState.currentSessionScore, rank: 'F (死亡)', details: [...window.appState.currentSessionLogs, { level: '死亡', score: 0, note: reason }] });
+                    window.db.saveUser(window.appState.userId, u[window.appState.userId]);
+                }
+                document.getElementById('gameover-reason').textContent = reason;
+                document.getElementById('modal-gameover').classList.remove('hidden');
+            },
+            finish: () => {
+                window.appState.active=false; 
+                const u = window.db.getUsers();
+                if (u[window.appState.userId]) {
+                    u[window.appState.userId].history.push({ date: new Date().toLocaleString(), totalScore: window.appState.currentSessionScore, rank: 'S (通關)', details: window.appState.currentSessionLogs });
+                    window.db.saveUser(window.appState.userId, u[window.appState.userId]);
+                }
+                document.getElementById('summary-score').textContent = window.appState.currentSessionScore;
+                document.getElementById('summary-rank').textContent = 'S'; 
+                window.app.nav('summary');
+            }
+        };
+
+        window.admin = {
+            renderDash: () => {
+                const list = document.getElementById('admin-scenario-list'); list.innerHTML = '';
+                window.appState.scenarios = window.db.getScenarios();
+                
+                if (window.appState.scenarios.length === 0) {
+                    list.innerHTML = `<div class="text-center p-8 text-gray-500">
+                        <p>目前無情境資料。</p>
+                        <p class="text-xs mt-2">請點擊上方紅色按鈕初始化。</p>
+                    </div>`;
+                    return;
+                }
+
+                window.appState.scenarios.forEach((s, idx) => {
+                    list.innerHTML += `<div class="bg-gray-50 p-4 rounded-lg border flex justify-between items-center"><div class="flex-grow mr-4"><p class="text-sm font-bold text-purple-900 mb-1">Scenario ${idx+1}</p><p class="text-xs text-gray-600 line-clamp-2">${s.text}</p></div><div class="flex gap-2"><button type="button" onclick="window.admin.editScenario(${idx})" class="w-20 text-blue-600 text-xs border border-blue-200 bg-white p-2 rounded">編輯</button><button type="button" onclick="window.admin.askDelete('scenario', ${idx})" class="w-16 text-red-500 text-xs border border-red-200 bg-white p-2 rounded">刪除</button></div></div>`;
+                });
+            },
+            askDelete: (type, idx) => { window.appState.pendingDeleteType = type; window.appState.pendingDeleteIdx = idx; document.getElementById('modal-confirm').classList.remove('hidden'); },
+            closeConfirmModal: () => { document.getElementById('modal-confirm').classList.add('hidden'); window.appState.pendingDeleteType = null; },
+            executeDelete: () => {
+                const type = window.appState.pendingDeleteType; const idx = window.appState.pendingDeleteIdx;
+                if (type === 'scenario') { window.appState.scenarios.splice(idx, 1); window.db.saveData(window.appState.scenarios); window.admin.renderDash(); }
+                window.admin.closeConfirmModal();
+            },
+            openScenarioEditor: (idx=-1) => {
+                window.appState.editingScenario = { id: `s_${Date.now()}`, text: "", levels: [], reports:{blood:[], urine:[], vitals:[]} };
+                window.appState.scenarios.push(window.appState.editingScenario);
+                window.appState.editScenarioIdx = window.appState.scenarios.length - 1;
+                document.getElementById('edit-scenario-text').value = "";
+                window.admin.renderScenarioLevels();
+                window.app.nav('admin-scenario-editor');
+            },
+            editScenario: (idx) => {
+                window.appState.editScenarioIdx = idx;
+                window.appState.editingScenario = JSON.parse(JSON.stringify(window.appState.scenarios[idx]));
+                document.getElementById('edit-scenario-text').value = window.appState.editingScenario.text;
+                window.admin.renderScenarioLevels();
+                window.app.nav('admin-scenario-editor');
+            },
+            backToAdminDash: () => { window.admin.renderDash(); window.app.nav('admin-dash'); },
+            renderScenarioLevels: () => {
+                const list = document.getElementById('admin-level-list'); list.innerHTML = '';
+                const levels = window.appState.editingScenario.levels || [];
+                levels.forEach((l, i) => {
+                    list.innerHTML += `<div class="flex justify-between items-center border p-3 rounded bg-white shadow-sm"><span class="text-sm font-bold">L${i+1}: ${l.name}</span><button onclick="window.admin.openLevelEditor(${i})" class="text-blue-500 text-xs">編輯</button></div>`;
+                });
+            },
+            saveScenario: () => {
+                const txt = document.getElementById('edit-scenario-text').value; if(!txt) return alert("請輸入文字");
+                window.appState.editingScenario.text = txt;
+                window.appState.scenarios[window.appState.editScenarioIdx] = window.appState.editingScenario;
+                window.db.saveData(window.appState.scenarios); window.app.nav('admin-dash');
+            },
+            openLevelEditor: (idx) => {
+                window.appState.editingLevelIdx = idx;
+                const lvl = window.appState.editingScenario.levels[idx];
+                document.getElementById('edit-lvl-name').value = lvl.name;
+                document.getElementById('edit-lvl-threshold').value = lvl.threshold;
+                const clist = document.getElementById('editor-conditions-list'); clist.innerHTML = '';
+                if(lvl.conditions) lvl.conditions.forEach(c => window.admin.addConditionRow(c.label, c.points, c.req));
+                const alist = document.getElementById('editor-actions-list'); alist.innerHTML = '';
+                if(lvl.actions) lvl.actions.forEach(a => window.admin.addActionRow(a.label, a.type, a.score, a.isFatal));
+                document.getElementById('modal-level-editor').classList.remove('hidden');
+            },
+            closeLevelEditor: () => document.getElementById('modal-level-editor').classList.add('hidden'),
+            addConditionRow: (l='',p=100,r=false) => { document.getElementById('editor-conditions-list').innerHTML += `<tr class="condition-row"><td class="p-1"><input class="c-lbl border p-1 w-full text-xs" value="${l}"></td><td class="p-1"><input class="c-pts border p-1 w-full text-xs" type="number" value="${p}"></td></tr>`; },
+            addActionRow: (l='',t='treatment',s=0, f=false) => { 
+                document.getElementById('editor-actions-list').innerHTML += `<tr class="action-row border-b"><td class="p-1"><input class="a-lbl border p-1 w-full text-xs" value="${l}"></td><td class="p-1"><select class="a-type border text-xs"><option value="treatment" ${t==='treatment'?'selected':''}>處置 (藍色)</option><option value="callout" ${t==='callout'?'selected':''}>求救 (粉色)</option></select></td><td class="p-1"><input class="a-score border w-10 text-xs" value="${s}"></td><td class="p-1"><input type="checkbox" class="a-fatal" ${f?'checked':''}></td><td class="p-1 text-center"><button onclick="this.closest('tr').remove()" class="text-red-500">x</button></td></tr>`; 
+            },
+            saveLevelToScenario: () => {
+                const name=document.getElementById('edit-lvl-name').value;
+                const conds=[]; document.querySelectorAll('.condition-row').forEach((r,i) => { const l=r.querySelector('.c-lbl').value; if(l) conds.push({id:`c_${i}`, label:l, points:100, req:true}); });
+                const acts=[]; document.querySelectorAll('.action-row').forEach((r,i) => { 
+                    const l=r.querySelector('.a-lbl').value; const t=r.querySelector('.a-type').value; const s=parseInt(r.querySelector('.a-score').value)||0; const f=r.querySelector('.a-fatal').checked;
+                    if(l) acts.push({id:`a_${i}`, label:l, type:t, score:s, isFatal:f}); 
+                });
+                window.appState.editingScenario.levels[window.appState.editingLevelIdx].name = name;
+                window.appState.editingScenario.levels[window.appState.editingLevelIdx].conditions = conds;
+                window.appState.editingScenario.levels[window.appState.editingLevelIdx].actions = acts;
+                window.admin.closeLevelEditor(); window.admin.renderScenarioLevels();
+            },
+             openReportEditor: () => { document.getElementById('modal-report-editor').classList.remove('hidden'); },
+             closeReportEditor: () => { document.getElementById('modal-report-editor').classList.add('hidden'); },
+             saveReportJson: () => { window.admin.closeReportEditor(); }
+        };
+
+        window.reportSys = { init: () => {}, switchTab: (t) => {
+             document.querySelectorAll('.report-tab').forEach(e => e.classList.remove('active'));
+             document.getElementById(`tab-${t}`).classList.add('active');
+             const data = window.appState.currentScenario ? (window.appState.currentScenario.reports || {}) : {};
+             const items = data[t] || [];
+             const container = document.getElementById('report-content-area');
+             if (items.length === 0) { container.innerHTML = '<div class="p-8 text-center text-gray-500">此類別無數據</div>'; return; }
+             let html = '<table class="report-table"><thead><tr>';
+             if(t === 'vitals') { html += '<th>日期</th><th>時間</th><th>體溫</th><th>脈搏</th><th>呼吸</th><th>血壓</th><th>血氧</th></tr></thead><tbody>'; items.forEach(row => { html += `<tr>`; row.forEach(val => html += `<td>${val}</td>`); html += `</tr>`; }); } 
+             else { html += '<th class="w-1/3">檢驗日期</th><th class="w-2/3">檢驗項目</th></tr></thead><tbody>'; items.forEach(row => { html += `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`; }); }
+             html += '</tbody></table>'; container.innerHTML = html;
+        }};
+
+        document.addEventListener('DOMContentLoaded', window.app.init);
+    </script>
+
+</body></html>
